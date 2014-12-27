@@ -1,0 +1,81 @@
+body {
+  background: #333;
+  color: #FFF;
+  font: 14px/1 sans-serif;
+  padding: 10px;    
+}
+
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.rfloat {
+  float: right;
+}
+
+#header {
+  padding: 10px;
+}
+
+#cell-count-table {
+  border-collapse: collapse;
+  margin: 10px 0 20px 0;
+  width: 100%;
+}
+
+#cell-count-table td, #cell-count-table th {
+
+  border: solid 1px #CCC;
+  padding: 10px 5px 10px 5px;
+
+}
+
+#cell-count-table th {
+  background: #555;
+  font-weight: normal;
+}
+
+#cell-count-table tr {
+  background: #000;
+}
+
+#cell-counts-div {
+  margin-top: 20px;
+}
+
+#image-container {
+  position: relative;
+}
+
+#cell-image, #cell-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#cell-image {
+  z-index: 5;
+}
+
+#cell-svg {
+  z-index: 10;
+}
+
+
+.text-field {
+  color: #000;
+}
+
+.button {
+  background-color: #CCC;
+  color: #000;
+}

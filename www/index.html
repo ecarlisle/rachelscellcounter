@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Rachel's Cell Counter</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- Header -->
+      <div id="header" class="row">
+        <div class="col-xs-6">RACHEL'S CELL COUNTER</div>
+        <div class="col-xs-6">
+          <form id="file-upload cf">
+            <input class="rfloat" type="file" id="image-file" name="image-file" onchange="showFile()" />
+          </form>
+        </div>
+      </div>
+
+
+      <div class="row">
+        
+        <!-- Cell Image -->
+        <div id="image-container" class="col-xs-8">
+          <svg id="cell-svg" />
+          <img id="cell-image" />
+        </div>
+
+        <!-- Cell Counter Table -->
+        <div class="col-xs-4" id="cell-counts-div">
+          <form id="cell-count-form">
+            <table id="cell-count-table">
+              <tr>
+                <th />
+                <th>Group Name</th>
+                <th>Color</th>
+                <th>Count</th>
+                <th />
+              </tr>
+            </table>
+            <div class="cf" style="width: 100%">
+              <input type="button" class="lfloat button" value="Add Group" onClick="addCellGroup()" />
+              <input type="button" class="rfloat button" value="Undo" onClick="undo()" />
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Cell Counter Table Row -->
+    <script type="text/html" id="group-row">
+      <tr data-groupName="">
+        <td>
+          <input type="radio" name="selection"  onchange="setSelectedGroup()" />
+        </td>
+        <td style="width: 50%">
+          <input type="text" style="width: 100%" class="text-field" />
+        </td>
+        <td>
+          <select name="cell-color" class="cell-color" onchange="setRowColor(this)">
+            <option value="#000000,#FFF">Black</option>
+            <option value="#808080,#FFF">Gray</option>
+            <option value="#C0C0C0,#000">Silver</option>
+            <option value="#00FFFF,#000">Aqua</option>
+            <option value="#008080,#FFF">Teal</option>
+            <option value="#0000FF,#FFF">Blue</option>
+            <option value="#000080,#FFF">Navy</option>
+            <option value="#FFFF00,#000">Yellow</option>
+            <option value="#808000,#FFF">Olive</option>
+            <option value="#00FF00,#000">Lime</option>
+            <option value="#008000,#FFF">Green</option>
+            <option value="#FF00FF,#FFF">Fuchsia</option>
+            <option value="#800080,#FFF">Purple</option>
+            <option value="#FF0000,#FFF">Red</option>
+            <option value="#800000,#FFF">Maroon</option>
+            <option value="#FFFFFF,#000">White</option>
+          </select>
+        </td>
+        <td>0</td>
+        <td>
+          <input type="button" value="X" class="button" onClick="removeCellGroup(this)" />
+        </td>
+      </tr>
+    </script>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/cordova.js"></script>
+    <script type="text/javascript" src="js/rachelscellcounter.js"></script>
+  
+  </body>
+</html>
